@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="gallery-container" id="gal_images">
+  {% for image in posts %}
+  <div class="gallery-item">
+    <a
+      href="{% url 'image-detail' image.pk %}"
+      data-src="{{ image.image.url }}"
+      data-sub-html="<h4>{{ image.title }}</h4>"
+    >
+      <img src="{{ image.image.url }}" alt="{{ image.title }}" />
+    </a>
+  </div>
+  {% endfor %}
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    lightGallery(document.getElementById("gal_images"), {
+      selector: 'a',
+      download: false
+    });
+  });
+</script>
+{% endblock %}
