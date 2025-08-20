@@ -1,4 +1,4 @@
-# 📝 Blog System (v0.1)
+# 📝 Image Gallery
 
 A basic Django project where user can add, view and delete images. 
 Light gallery feature is also used in this project to view the images.
